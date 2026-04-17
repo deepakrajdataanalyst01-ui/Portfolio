@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepak Raj · data analyst</title>
+  <!-- Font Awesome 6 & Google Fonts (Inter + Poppins) -->
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#f39c12">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --orange: #f39c12;           /* accent / highlight */
+      --orange-dark: #e67e22;
+      --orange-soft: #f8c47130;
+      --card-bg: #141a24;
+      --border-light: #2c3543;
+      --text-muted: #a0aec0;
+      --nav-bg: #0f141ecc;
+      --bg-dark: #0a0c12;
+      --bg-gradient: radial-gradient(circle at 30% 30%, #1b212b, #080a0e 90%);
+    }
+
+    body {
+      font-family: 'Inter', 'Poppins', sans-serif;
+      background-color: var(--bg-dark);
+      background-image: var(--bg-gradient);
+      color: #eaeef5;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ----- NAVIGATION (fixed, blur, includes RESUME download) ----- */
+    .navbar {
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #2d3848;
+      padding: 1.2rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: -0.5px;
+    }
+    .logo span {
+      color: var(--orange);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #d0d7e3;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--orange);
+      border-bottom-color: var(--orange);
+    }
+    /* special download button style (resume) */
+    .resume-btn {
+      background: transparent;
+      border: 2px solid var(--orange);
+      color: var(--orange) !important;
+      padding: 6px 18px !important;
+      border-radius: 40px;
+      font-weight: 600;
+      border-bottom: none !important;
+    }
+    .resume-btn:hover {
+      background: var(--orange);
+      color: #0a0c12 !important;
+      box-shadow: 0 0 15px var(--orange);
+    }
+    .nav-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: var(--orange);
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem 1.5rem;
+      }
+      .nav-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem 0 1.5rem;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .resume-btn {
+        padding: 8px 24px !important;
+      }
+    }
+
+    /* ========== NEW ATTRACTIVE HERO SECTION (with Deepak Raj) ========== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 2rem 4rem;
+    }
+    .hero-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 3rem;
+      position: relative;
+      z-index: 5;
+    }
+    .hero-content {
+      flex: 1 1 500px;
+    }
+    .hero-subtitle {
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-subtitle i {
+      font-size: 1.2rem;
+    }
+    .hero-title {
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin: 0.5rem 0 1rem;
+      color: white;
+    }
+    .hero-title-name {
+      color: var(--orange);
+      text-shadow: 0 0 15px rgba(243, 156, 18, 0.4);
+      position: relative;
+      display: inline-block;
+      font-family:'Times New Roman', Times, serif;
+    }
+
+    .hero-title-name {
+      background: linear-gradient(45deg, #f39c12, #f1c40f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-dynamic {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 1.5rem 0 1.8rem;
+      flex-wrap: wrap;
+    }
+    .hero-dynamic-text {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #d0d7e3;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .hero-roles {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .role-badge {
+      background: rgba(243, 156, 18, 0.15);
+      border: 1px solid rgba(243, 156, 18, 0.4);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      color: var(--orange);
+      backdrop-filter: blur(5px);
+      font-size: 1.1rem;
+      transition: 0.2s;
+    }
+    .role-badge:hover {
+      background: var(--orange);
+      color: #0a0c12;
+      transform: translateY(-3px);
+    }
+    .hero-description {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 2rem 0 2.5rem;
+      line-height: 1.7;
+      font-family: cursive;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .cta-primary {
+      background: var(--orange);
+      color: #0a0c12;
+      padding: 1rem 2.8rem;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid var(--orange);
+      transition: 0.2s;
+    }
+    .cta-primary:hover {
+      background: transparent;
+      color: var(--orange);
+      box-shadow: 0 0 25px var(--orange);
+    }
+    .cta-secondary {
+      background: transparent;
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid #3a465b;
+      transition: 0.2s;
+    }
+    .cta-secondary:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+    .hero-visual {
+      flex: 1 1 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .hero-graphic {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+    }
+    .hero-graphic i {
+      font-size: 20rem;
+      color: #1f2a38;
+      text-shadow: 0 0 50px #f39c1240;
+      transition: 0.3s;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(2deg); }
+    } */
+
+    .floating-icon {
+      position: absolute;
+      background: var(--card-bg);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--orange);
+      box-shadow: 0 0 30px rgba(243, 156, 18, 0.3);
+      backdrop-filter: blur(5px);
+      animation: floatSmall 5s ease-in-out infinite;
+    }
+    .floating-icon i {
+      font-size: 1.8rem !important;
+      color: var(--orange);
+    }
+    .icon-1 { top: 10%; right: 5%; animation-delay: 0s; }
+    .icon-2 { bottom: 20%; left: 0%; animation-delay: 1.5s; }
+    .icon-3 { top: 30%; left: 10%; animation-delay: 0.8s; }
+    /* @keyframes floatSmall {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    } */
+    @media (max-width: 900px) {
+      .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .hero-subtitle { justify-content: center; }
+      .hero-dynamic { justify-content: center; }
+      .hero-cta { justify-content: center; }
+      .hero-visual { margin-top: 2rem; }
+    }
+
+    /* ----- PREMIUM ABOUT SECTION (fullscreen, left/right split) ----- */
+    .about-premium {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 7rem 2rem 4rem;
+      width: 100%;
+    }
+    .about-premium-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      gap: 3rem;
+    }
+    .about-left-premium {
+      flex: 1 1 450px;
+      max-width: 620px;
+    }
+    .about-pre-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+      border-left: 3px solid var(--orange);
+      padding-left: 1rem;
+    }
+    .about-left-premium h1 {
+      font-size: clamp(3rem, 7vw, 5.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin: 0.5rem 0 1.2rem;
+      color: white;
+    }
+    .accent-highlight {
+      color: var(--orange);
+      border-bottom: 2px dashed var(--orange);
+      display: inline-block;
+    }
+    .email-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(243, 156, 18, 0.08);
+      border: 1px solid rgba(243, 156, 18, 0.3);
+      border-radius: 100px;
+      padding: 0.5rem 1.5rem 0.5rem 1.2rem;
+      margin: 1.8rem 0 1.5rem;
+      font-size: 1.1rem;
+    }
+    .email-badge i {
+      color: var(--orange);
+      font-style: normal;
+      font-weight: 600;
+    }
+    .email-badge a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px dotted;
+    }
+    .email-badge a:hover {
+      color: var(--orange);
+    }
+    .about-description-premium {
+      font-size: 1.35rem;
+      color: var(--text-muted);
+      margin: 2rem 0 0;
+      line-height: 1.7;
+      max-width: 550px;
+      border-left: 2px solid #2f3747;
+      padding-left: 2rem;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .about-description-premium strong {
+      color: var(--orange);
+      font-weight: 600;
+    }
+    .about-right-premium {
+      flex: 1 1 380px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .image-frame {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 25px 30px 50px rgba(0, 0, 0, 0.7);
+      transition: transform 0.3s ease;
+    }
+    .image-frame:hover {
+      transform: scale(1.01);
+    }
+    .portrait {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      filter: grayscale(0.2) contrast(1.1);
+    }
+    /* dramatic half-shadow overlay */
+    .image-frame::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(115deg, rgba(0,0,0,0.75) 15%, transparent 50%, rgba(255,255,240,0.05) 80%);
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      border-radius: inherit;
+    }
+    .image-frame::before {
+      content: "";
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 70px;
+      height: 4px;
+      background: var(--orange);
+      z-index: 5;
+      border-radius: 4px;
+      box-shadow: 0 0 15px var(--orange);
+    }
+    .image-frame:hover::after {
+      background: linear-gradient(115deg, rgba(0,0,0,0.7) 15%, transparent 55%, rgba(243,156,18,0.1) 85%);
+    }
+    @media (max-width: 900px) {
+      .about-premium-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
+      }
+      .about-left-premium {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .about-pre-title {
+        border-left: none;
+        padding-left: 0;
+        text-align: center;
+      }
+      .about-description-premium {
+        border-left: none;
+        padding-left: 0;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .image-frame {
+        max-width: 400px;
+      }
+    }
+
+    /* ----- rest of portfolio sections (original design) ----- */
+    section:not(.about-premium):not(.hero) {
+      padding: 80px 0;
+    }
+    .section-title {
+      font-size: 2.3rem;
+      font-weight: 600;
+      margin-bottom: 48px;
+      position: relative;
+      display: inline-block;
+      color: #fff;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 80px;
+      height: 4px;
+      background: var(--orange);
+      border-radius: 2px;
+      box-shadow: 0 0 10px var(--orange);
+    }
+
+    /* skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 36px 24px;
+      margin-top: 20px;
+    }
+    .skill-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 32px;
+      padding: 28px 18px;
+      text-align: center;
+      transition: 0.25s;
+    }
+    .skill-card:hover {
+      border-color: var(--orange);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -10px #f39c1240;
+    }
+    .skill-icon {
+      font-size: 3.2rem;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+    .skill-card h3 { font-size: 1.3rem; margin-bottom: 6px; }
+    .skill-card p { color: var(--text-muted); font-size: 0.9rem; }
+
+    /* projects grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px;
+    }
+    .project-card {
+      background: var(--card-bg);
+      padding: 28px 24px;
+      border-radius: 28px;
+      border: 1px solid var(--border-light);
+      transition: 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      border-color: var(--orange);
+      transform: scale(1.02);
+    }
+    .project-icon { font-size: 2.2rem; color: var(--orange); margin-bottom: 20px; }
+    .project-card h3 { font-size: 1.5rem; margin-bottom: 12px; }
+    .project-desc { color: #b7c3d7; margin: 10px 0 16px; flex-grow: 1; }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0 20px;
+    }
+    .project-tags span {
+      background: #1f2a38;
+      color: var(--orange);
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .project-link {
+      color: var(--orange);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-top: 1px dashed #3a465b;
+      padding-top: 16px;
+    }
+    .project-link i { transition: transform 0.2s; }
+    .project-link:hover i { transform: translateX(5px); }
+
+    /* certificates */
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 32px;
+    }
+    .cert-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 30px;
+      padding: 32px 20px 24px;
+      text-align: center;
+      transition: 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .cert-card:hover { border-color: var(--orange); transform: translateY(-5px); }
+    .cert-icon { font-size: 2.8rem; color: var(--orange); margin-bottom: 20px; }
+    .cert-card h3 { font-size: 1.4rem; margin-bottom: 8px; }
+    .cert-issuer { color: var(--orange); font-weight: 500; margin-bottom: 6px; }
+    .cert-date { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
+    .cert-link {
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: 1px solid var(--orange);
+      border-radius: 40px;
+      padding: 8px 18px;
+      margin-top: auto;
+      transition: 0.2s;
+    }
+    .cert-link:hover { background: var(--orange); color: #0a0c12; }
+
+    /* experience timeline */
+    .timeline { margin-top: 40px; }
+    .exp-item {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 42px;
+      flex-wrap: wrap;
+      border-left: 3px solid var(--orange);
+      padding-left: 30px;
+      position: relative;
+    }
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 8px;
+      width: 16px;
+      height: 16px;
+      background: var(--orange);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px #f39c1230;
+    }
+    .exp-left { min-width: 160px; }
+    .exp-date {
+      font-weight: 600;
+      color: var(--orange);
+      background: #1f2632;
+      padding: 5px 16px;
+      border-radius: 40px;
+      display: inline-block;
+      font-size: 0.95rem;
+    }
+    .exp-right h3 { font-size: 1.7rem; font-weight: 600; margin-bottom: 4px; }
+    .exp-company { color: var(--orange); font-weight: 500; margin-bottom: 12px; font-size: 1.1rem; }
+    .exp-desc { color: var(--text-muted); max-width: 700px; }
+
+    /* contact details */
+    .contact-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      background: #10161f;
+      border-radius: 48px;
+      padding: 48px 42px;
+      border: 1px solid #2d384b;
+      margin-top: 30px;
+    }
+    .contact-info { flex: 1 1 280px; }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+    .contact-item i {
+      width: 50px;
+      height: 50px;
+      background: #1e293b;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--orange);
+      border: 1px solid #3c4a60;
+    }
+    .contact-text h4 { font-size: 1.1rem; font-weight: 400; color: #aebcd0; }
+    .contact-text a, .contact-text span { color: white; font-size: 1.3rem; font-weight: 500; text-decoration: none; }
+    .contact-text a:hover { color: var(--orange); }
+
+    .social-links {
+      display: flex;
+      gap: 24px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .social-links a {
+      background: #1e293b;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--orange);
+      font-size: 2rem;
+      border: 1px solid #3e4b60;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .social-links a:hover {
+      background: var(--orange);
+      color: #0a0c12;
+      transform: scale(1.1);
+      box-shadow: 0 0 22px var(--orange);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 0;
+      border-top: 1px solid #232c3a;
+      color: #6f7d94;
+    }
+
+    /* Base Mobile Styles (applies to all devices) */
+    body {
+      font-size: 16px;
+      overflow-x: hidden;
+      width: 100%;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .container {
+      width: 100%;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Tablet & Small Laptop (up to 1024px) */
+    @media (max-width: 1024px) {
+      .hero-container,
+      .about-premium-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+      }
+      .hero-subtitle,
+      .hero-dynamic,
+      .hero-cta {
+        justify-content: center;
+      }
+      .about-pre-title {
+        border-left: none;
+        padding-left: 0;
+        text-align: center;
+      }
+      .about-description-premium {
+        border-left: none;
+        padding-left: 0;
+        text-align: left; /* Keep readability on large tablets */
+        margin: 0 auto;
+      }
+      .image-frame {
+        max-width: 380px;
+        margin: 0 auto;
+      }
+      /* Make grids flexible */
+      .skills-grid,
+      .projects-grid,
+      .certificates-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+    }
+
+    /* Mobile Phones (up to 768px) */
+    @media (max-width: 768px) {
+      /* Responsive Navigation (Critical) */
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem 0;
+        background: var(--nav-bg);
+        backdrop-filter: blur(12px);
+        border-radius: 0 0 1rem 1rem;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .nav-toggle {
+        display: block;
+      }
+      .navbar {
+        padding: 0.75rem 1rem;
+      }
+      .logo {
+        font-size: 1.5rem;
+      }
+      .resume-btn {
+        padding: 0.5rem 1.5rem !important;
+      }
+      
+      /* Typography scaling */
+      .hero-title {
+        font-size: clamp(2rem, 12vw, 3.5rem);
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+      }
+      
+      /* Stack sections */
+      .exp-item {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-left: 1rem;
+      }
+      .exp-left {
+        min-width: auto;
+      }
+      .contact-details {
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+      }
+      .contact-item {
+        flex-wrap: wrap;
+      }
+      .social-links {
+        justify-content: center;
+      }
+      .footer {
+        font-size: 0.875rem;
+      }
+    }
+
+    /* Small Mobile (under 480px) */
+    @media (max-width: 480px) {
+      .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .cta-primary,
+      .cta-secondary {
+        text-align: center;
+        justify-content: center;
+      }
+      .role-badge {
+        font-size: 0.8rem;
+        padding: 0.25rem 1rem;
+      }
+      .skills-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columns on small screens */
+      }
+    }
+
+    /* Laptop & Desktop (above 1024px) - default styles already work */
+    @media (min-width: 1025px) {
+      .container {
+        max-width: 1200px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+      .hero-container {
+        gap: 4rem;
+      }
+    }
+
+    /* Make email smaller on mobile devices */
+    @media (max-width: 768px) {
+      /* For the email in contact section */
+      .contact-item .contact-text a[href^="mailto:"] {
+        font-size: 1.5rem;
+        word-break: break-all; /* Breaks long email addresses */
+        max-width: 400px;
+        display: inline-block;
+      }
+      
+      /* For the email badge in about section */
+      .email-badge {
+        font-size: 1.5rem;
+        padding: 0.3rem 1rem;
+      }
+      
+      .email-badge a {
+        font-size: 1.5rem;
+        max-width: 250px;
+        display: inline-block;
+        white-space: normal;
+        word-break: break-all;
+      }
+    }
+
+    /* Even smaller screens */
+    @media (max-width: 480px) {
+      .contact-item .contact-text a[href^="mailto:"] {
+        font-size: 1.35rem;
+        max-width: 220px;
+      }
+      
+      .email-badge a {
+        font-size: 1.35rem;
+        max-width: 250px;
+      }
+    }
+
+    /* Center specific section headings on mobile */
+    @media (max-width: 768px) {
+      /* Technical Skills */
+      #skills .section-title,
+      /* Featured Projects */
+      #projects .section-title,
+      /* About section heading (the one with "data analyst with a creative edge") */
+      #about-premium h1,
+      /* Certifications */
+      #certificates .section-title,
+      /* Work Experience */
+      #experience .section-title,
+      /* Contact Me */
+      #contact .section-title {
+        text-align: center;
+        display: block;
+        width: 100%;
+      }
+      
+      /* Center the orange underline for all .section-title elements */
+      #skills .section-title::after,
+      #projects .section-title::after,
+      #certificates .section-title::after,
+      #experience .section-title::after,
+      #contact .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      /* For the About section's main heading (h1) */
+      #about-premium h1 {
+        text-align: center;
+      }
+      
+      /* Keep the "ABOUT" pre-title centered too */
+      #about-premium .about-pre-title {
+        text-align: center;
+        border-left: none;
+        padding-left: 0;
+      }
+      
+      /* But keep the about description left-aligned for better readability */
+      #about-premium .about-description-premium {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION with RESUME download link (PDF) -->
+  <nav class="navbar">
+    <div class="logo">Deepak<span>.</span></div>
+    <div class="nav-toggle" id="navToggle"><i class="fa-solid fa-bars"></i></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about-premium">About</a></li>
+      <!-- RESUME DOWNLOAD BUTTON (pdf) -->
+      <li><a href="#" id="resumeDownloadLink" class="resume-btn" download><i class="fa-regular fa-file-pdf" style="margin-right: 6px;"></i>Resume</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li> 
+    </ul>
+  </nav>
+
+  <main>
+    <!-- ===== NEW ATTRACTIVE HERO SECTION with DEEPAK RAJ ===== -->
+    <section class="hero" id="home">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-subtitle">
+            <i class="fa-solid fa-chart-line"></i> <span>DATA ANALYST & STORYTELLER</span>
+          </div>
+          <h1 class="hero-title">
+            Hi, I'm <span class="hero-title-name">Deepak Raj</span>
+          </h1>
+
+          <div class="hero-dynamic">
+            <span class="hero-dynamic-text">I turn data into</span>
+            <div class="hero-roles">
+              <span class="role-badge">insights</span>
+              <span class="role-badge">dashboards</span>
+              <span class="role-badge">business growth</span>
+            </div>
+          </div>
+
+          <p class="hero-description">
+          I help businesses make smarter decisions by transforming messy, complex data into clear, actionable insights. 
+          With expertise in <strong>Python, SQL, Excel and Power BI</strong>, I build dashboards and analyses that are not just accurate — but impactful.
+          </p>
+          <p style="color:#6f7d94; margin-top:5px; font-size:0.95rem;">
+            ✔ Focused on real-world problem solving & data-driven decision making
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="cta-primary">View my work <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#contact" class="cta-secondary"><i class="fa-regular fa-paper-plane"></i>connect with me</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-graphic">
+            <i class="fa-solid fa-chart-pie"></i>
+            <!-- floating decorative icons -->
+            <div class="floating-icon icon-2"><i class="fa-solid fa-database"></i></div>
+            <div class="floating-icon icon-3"><i class="fa-brands fa-python"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREMIUM ABOUT SECTION (fullscreen) with id="about-premium" -->
+    <section class="about-premium" id="about-premium">
+      <div class="about-premium-container">
+        <div class="about-left-premium">
+          <div class="about-pre-title">ABOUT</div>
+          <h1>data analyst<br><span class="accent-highlight">with a creative</span> edge</h1>
+          <div class="email-badge">
+            <i>✉</i> <a href="mailto:deepakrajdataanalyst@google.com">deepakrajdataanalyst@google.com</a>
+          </div>
+          <div class="about-description-premium">
+            <p>
+              I'm <strong>Deepak Raj</strong> — a data analyst focused on solving real business problems using data. 
+              I don’t just create dashboards — I uncover insights that help companies make better decisions.
+            </p>
+
+            <p style="margin-top: 1.5rem;">
+              My work combines <strong>analytics, visualization, and storytelling</strong> to make data easy to understand and actionable. 
+              Whether it's identifying trends, optimizing performance, or building dashboards, I aim to deliver clarity from complexity.
+            </p>
+
+            <p style="margin-top: 1.5rem;">
+              I specialize in <strong>Python, SQL, Excel and Power BI</strong> — and I’m continuously learning to stay ahead in the data field.
+            </p>
+          </div>
+        </div>
+        <div class="about-right-premium">
+          <div class="image-frame">
+            <img class="portrait" src="deepak.jpeg" alt="Deepak Raj portrait">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS section -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">technical skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card"><div class="skill-icon"><i class="fa-solid fa-database"></i></div><h3>SQL</h3><p>MySQL, PostgreSQL, BigQuery</p></div>
+          <div class="skill-card"><div class="skill-icon"><i class="fa-brands fa-python"></i></div><h3>Python</h3><p>pandas, numpy, matplotlib</p></div>
+          <div class="skill-card"><div class="skill-icon"><i class="fa-regular fa-file-excel"></i></div><h3>Excel</h3><p>pivot, power query, VBA</p></div>
+          <div class="skill-card"><div class="skill-icon"><i class="fa-solid fa-chart-pie"></i></div><h3>Power BI</h3><p>DAX, power query, dashboards</p></div>
+          <div class="skill-card"><div class="skill-icon"><i class="fa-solid fa-chart-column"></i></div><h3>Statistics</h3><p>A/B testing, regression</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS section – UPDATED with 5 new real projects -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">featured projects</h2>
+        <div class="projects-grid">
+          <!-- 1. Amazon Sales Analysis Dashboard -->
+          <div class="project-card"><div class="project-icon"><i class="fa-brands fa-amazon"></i></div><h3>Amazon Sales Analysis Dashboard</h3><p class="project-desc">Interactive Power BI dashboard analyzing sales trends, category performance, and regional revenue. Built with Excel for data cleaning and Power BI for rich visualizations.</p><div class="project-tags"><span>Power BI</span><span>Excel</span><span>DAX</span></div><a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a></div>
+          <!-- 2. OLA Riding & Booking Analysis -->
+          <div class="project-card"><div class="project-icon"><i class="fa-solid fa-taxi"></i></div><h3>OLA Riding & Booking Analysis</h3><p class="project-desc">Comprehensive analysis of ride booking patterns, cancellations, and peak hours using SQL for data extraction, Excel for preprocessing, and Power BI for interactive dashboards.</p><div class="project-tags"><span>SQL</span><span>Excel</span><span>Power BI</span></div><a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a></div>
+          <!-- 3. Phone Pay Analysis Dashboard -->
+          <div class="project-card"><div class="project-icon"><i class="fa-solid fa-mobile-screen-button"></i></div><h3>Phone Pay Analysis Dashboard</h3><p class="project-desc">Deep dive into digital payment trends, user behavior, and transaction volumes. SQL queries for data aggregation, Excel modeling, and Power BI storytelling.</p><div class="project-tags"><span>SQL</span><span>Excel</span><span>Power BI</span></div><a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a></div>
+          <!-- 4. Apollo Healthcare Project Analysis -->
+          <div class="project-card"><div class="project-icon"><i class="fa-solid fa-hospital-user"></i></div><h3>Apollo Healthcare Analysis</h3><p class="project-desc">Healthcare operational dashboard analyzing patient visits, department efficiency, and resource allocation using Excel (power query) and Power BI visualizations.</p><div class="project-tags"><span>Excel</span><span>Power BI</span><span>Healthcare Analytics</span></div><a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a></div>
+          <!-- 5. EDA Project (Excel, Python, Power BI) -->
+          <div class="project-card"><div class="project-icon"><i class="fa-solid fa-chart-line"></i></i></div><h3>Exploratory Data Analysis (EDA)</h3><p class="project-desc">End-to-end exploratory data analysis on real-world datasets. Performed data cleaning in Excel, statistical analysis in Python (pandas, matplotlib), and final dashboard in Power BI.</p><div class="project-tags"><span>Excel</span><span>Python</span><span>Power BI</span><span>EDA</span></div><a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a></div>
+          <!-- 6. Airbnb Analysis Dashboard -->
+          <div class="project-card"><div class="project-icon"><i class="fa-brands fa-airbnb"></i></div><h3>Airbnb Analysis Dashboard</h3><p class="project-desc">Built an interactive dashboard to analyze Airbnb listings, occupancy rates, and customer preferences. Used Excel for data cleaning and transformation, and Power BI for visualization and insights generation. </p><div class="project-tags"><span>Power BI</span><span>Excel</span><span>Data Analysis</span><span>Dashboard</span></div><a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES section -->
+    <section id="certificates">
+      <div class="container">
+        <h2 class="section-title">certifications</h2>
+        <div class="certificates-grid">
+          <div class="cert-card"><div class="cert-icon"><i class="fa-solid fa-robot"></i></div><h3>YUVA AI for ALL</h3><div class="cert-issuer">INDIA AI | Simplilearn </div><div class="cert-date">2026</div><a href="AI Certificate.pdf" class="cert-link">View certificate <i class="fa-solid fa-up-right-from-square"></i></a></div>
+          <div class="cert-card"><div class="cert-icon"><i class="fa-solid fa-chart-pie"></i></div><h3>Power BI for Beginners </h3><div class="cert-issuer">Microsoft | Simplilearn </div><div class="cert-date">2026</div><a href="Power BI Certificate.pdf" class="cert-link">View certificate <i class="fa-solid fa-up-right-from-square"></i></a></div>
+          <div class="cert-card"><div class="cert-icon"><i class="fa-brands fa-python"></i></div><h3>Python for Beginners </h3><div class="cert-issuer">Simplilearn | SkillUP</div><div class="cert-date">2026</div><a href="Python for Beginners.pdf" class="cert-link">View certificate <i class="fa-solid fa-up-right-from-square"></i></a></div>
+          <div class="cert-card"><div class="cert-icon"><i class="fa-solid fa-database"></i></div><h3>Introduction to SQL</h3><div class="cert-issuer">Simplilearn | SkillUP</div><div class="cert-date">2026</div><a href="SQL certificate.pdf" class="cert-link">View certificate <i class="fa-solid fa-up-right-from-square"></i></a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE section -->
+    <section id="experience">
+      <div class="container">
+        <h2 class="section-title">work experience</h2>
+        <div class="timeline">
+          <div class="exp-item"><div class="exp-left"><span class="exp-date">2025 – present</span></div><div class="exp-right"><h3>Data Entry Operator & Computer Teacher</h3><div class="exp-company">Vinayaka Vidya Mandir · Noorsarai, Nalanda</div><p class="exp-desc">Managed data entry tasks with accuracy and efficiency while teaching computer fundamentals to students. 
+        Guided students in basic programming, MS Office, and digital skills.</p></div></div>
+          <div class="exp-item"><div class="exp-left"><span class="exp-date">2024 – 2025</span></div><div class="exp-right"><h3>Computer Teacher</h3><div class="exp-company">Private School · Noorsarai, Nalanda</div><p class="exp-desc">Taught computer fundamentals, MS Office, and basic programming concepts. 
+        Helped students develop practical digital skills and problem-solving abilities.</p></div></div>
+          <div class="exp-item"><div class="exp-left"><span class="exp-date">2023 – 2024</span></div><div class="exp-right"><h3>Computer Teacher</h3><div class="exp-company">Private School · Noorsarai, Nalanda</div><p class="exp-desc">Introduced students to computer basics and IT skills, focusing on foundational knowledge and hands-on learning.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT section -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">contact me</h2>
+        <div class="contact-details">
+          <div class="contact-info">
+            <div class="contact-item"><i class="fa-solid fa-phone"></i><div class="contact-text"><h4>call / whatsapp</h4><a href="tel:+919508503637">+91 9508503637</a></div></div>
+            <div class="contact-item"><i class="fa-solid fa-envelope"></i><div class="contact-text"><h4>email</h4><a href="mailto:deepakrajdataanalyst@gmail.com">deepakrajdataanalyst@gmail.com</a></div></div>
+            <div class="contact-item"><i class="fa-solid fa-location-dot"></i><div class="contact-text"><h4>location</h4><span>Noida, India</span></div></div>
+          </div>
+          <div style="flex:1 1 260px;">
+            <h3 style="margin-bottom:24px; font-size:1.8rem;">let's connect</h3>
+            <div class="social-links">
+              <a href="https://www.instagram.com/deepakrajdataanalyst?igsh=YzhlcDBqZnRsZmNn"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/deepak-raj-3b5a31266"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://x.com/DeepakRajdata"><i class="fa-brands fa-twitter"></i></a>
+              <a href="https://github.com/deepakrajdataanalyst01-ui"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <p style="margin-top:32px; color:var(--text-muted);"><i class="fa-regular fa-comment"></i> open to freelance & full‑time opportunities</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">© 2026 Deepak Raj – <i class="fa-solid fa-chart-line" style="color: var(--orange);"></i>  data analyst. </div>
+    </footer>
+  </main>
+
+  <!-- JavaScript: mobile toggle + RESUME DOWNLOAD simulation (PDF) + smooth scroll for new hero -->
+  <script>
+    (function() {
+      // mobile nav toggle
+      const toggleBtn = document.getElementById('navToggle');
+      const navLinks = document.getElementById('navLinks');
+      if (toggleBtn && navLinks) {
+        toggleBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+        });
+      }
+
+      // smooth scroll for anchor links (excluding resume button)
+      document.querySelectorAll('.nav-links a:not(#resumeDownloadLink)').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (!href || href === '#') return;
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+            if (navLinks.classList.contains('show')) {
+              navLinks.classList.remove('show');
+            }
+          }
+        });
+      });
+
+      // RESUME DOWNLOAD functionality (creates a dummy PDF download)
+      const resumeBtn = document.getElementById('resumeDownloadLink');
+      if (resumeBtn) {
+        resumeBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          // Create a fake PDF blob and trigger download
+          const pdfContent = "DEEPAK RAJ - DATA ANALYST RESUME\n\nEXPERIENCE\n• Senior Data Analyst at Insightly Analytics (2022–present)\n• Data Analyst at Finlytics (2020–2022)\n• Junior Analyst intern at eComMetrics (2019–2020)\n\nSKILLS\nSQL, Python, Power BI, Excel, Statistics\n\nCERTIFICATIONS\nGoogle Data Analytics, Tableau Specialist, Python for Data Science, Advanced SQL\n\nContact: deepak.raj@data.com | +91 98765 43210";
+          const blob = new Blob([pdfContent], { type: 'application/pdf' });
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'Deepak_Raj_Resume.pdf';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          window.URL.revokeObjectURL(url);
+        });
+      }
+    })();
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW reg error:', err));
+      });
+    }
+  </script>
+</body>
+</html>
